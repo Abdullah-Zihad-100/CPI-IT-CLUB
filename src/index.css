@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 @import "tailwindcss";
 
+
 @theme{
     --font-primary:"Poppins", "sans-serif"
 }
@@ -61,5 +62,3 @@
         transform: translate3d(85px, 0, 0);
     }
 }
-
-
