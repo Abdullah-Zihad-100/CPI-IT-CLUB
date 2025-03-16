@@ -6,6 +6,10 @@
     --font-primary:"Poppins", "sans-serif"
 }
 
+.footer-bg{
+background: rgb(27, 101, 247);
+    background: linear-gradient(90deg, rgba(27, 101, 247, 1) 0%, rgba(30, 119, 237, 0.9136029411764706) 50%, rgba(5, 59, 157, 0.896796218487395) 100%);
+}
 
 
 

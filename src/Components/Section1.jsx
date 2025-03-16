@@ -7,7 +7,7 @@ const Section1 = () => {
           <div className="w-full mx-auto">
             <Lottie
               animationData={Robot}
-              className="w-[400px] mx-auto my-5"
+              className="md:w-[400px] w-[300px] mx-auto my-5"
               loop={true}
             />
           </div>
@@ -15,7 +15,7 @@ const Section1 = () => {
             <p className="text-blue-800 font-semibold">
               We're a dynamic team of
             </p>
-            <h3 className="text-5xl font-semibold leading-13">
+            <h3 className="sm:text-5xl text-3xl font-semibold leading-13">
               Innovative, <span className="text-blue-800">Tech </span>{" "}
               Enthusiastic People
             </h3>

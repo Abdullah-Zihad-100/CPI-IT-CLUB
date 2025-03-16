@@ -5,8 +5,16 @@ import "swiper/css/pagination";
 import { FreeMode, Pagination } from "swiper/modules";
 import ProfileCard from "../Components/ProfileCard";
 import Title from "./Title";
+import { axiosSecure } from "../Apis/axios";
+import { useEffect } from "react";
+import { useState } from "react";
 
 const Team = () => {
+  const [teamData, setTeamData] = useState();
+  useEffect(() => {
+    axiosSecure("/Team.json").then((res) => setTeamData(res?.data));
+  }, []);
+  console.log(teamData);
   return (
     <div className="max-w-7xl mx-auto py-20 px-5">
       <Title heading="Meet Our Team" title="Get to know our team members" />
@@ -19,7 +27,7 @@ const Team = () => {
         }}
         centeredSlides={true} // Center the active slide
         modules={[FreeMode, Pagination]} // Add required modules
-        className="mySwiper"
+        // className="mySwiper w-[1200px]"
         breakpoints={{
           // Breakpoints for different screen sizes
           320: {
@@ -42,18 +50,13 @@ const Team = () => {
           },
         }}
       >
-        <SwiperSlide>
-          <ProfileCard />
-        </SwiperSlide>
-        <SwiperSlide>
-          <ProfileCard />
-        </SwiperSlide>
-        <SwiperSlide>
-          <ProfileCard />
-        </SwiperSlide>
-        <SwiperSlide>
-          <ProfileCard />
-        </SwiperSlide>
+        {teamData?.map((teamMember) => (
+          <div key={teamMember._id}>
+            <SwiperSlide>
+              <ProfileCard teamMember={teamMember} />
+            </SwiperSlide>
+          </div>
+        ))}
       </Swiper>
     </div>
   );
